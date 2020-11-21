@@ -1,0 +1,22 @@
+function deleteNth(arr,n){
+  var ar1=arr,i,c,p=0,dup1=[];
+  
+   for(i=0;i<ar1.length;i++)
+    {
+      c=0;
+      for(j=0;j<=i;j++)
+        {
+          if(ar1[i]==ar1[j])
+            c++;
+        }
+            if(c<=n)
+              dup1[p++]=ar1[i];
+     
+            if(c>n)
+              continue;
+      }
+      
+     
+  
+  return dup1;
+}

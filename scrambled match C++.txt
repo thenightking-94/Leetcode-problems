@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include<bits/stdc++.h> 
+using namespace std;
+
+bool scramble(const std::string& s1, const std::string& s2){
+ string str,str2;
+ int count=0;
+ for(int i =0;i<s1.length();i++)
+ {count=0;
+     for(int j=0;j<=i;j++)
+     {
+         if(s1[i]==s1[j])
+         count++;
+     }
+     if(count==1)
+     str+=s1[i];
+     else
+     continue;
+ }
+ count=0;
+ for(int i =0;i<s2.length();i++)
+ {count=0;
+     for(int j=0;j<=i;j++)
+     {
+         if(s2[i]==s2[j])
+         count++;
+     }
+     if(count==1)
+     str2+=s2[i];
+     else
+     continue;
+ }
+ count=0;
+ sort(str.begin(),str.end());
+ sort(str2.begin(),str2.end());
+ cout<<str2<<endl;
+ cout<<str<<endl;
+for(int i=0;i<str2.length();i++)
+{
+    for(int j=0;j<str.length();j++)
+    {
+        if(str[j]==str2[i])
+        {
+        count++;
+        cout<<count<<endl;
+        }
+    }
+}
+
+if(count==str2.length())
+cout<<"matched";
+ 
+}
+ 
+
+
+int main() {
+	scramble("cedewaraaossoqqyt","codewars");
+	return 0;
+}

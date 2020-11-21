@@ -1,0 +1,28 @@
+var sortedSquares = function(A) {
+    var ar=A;
+    var i,j;
+    
+    for(i=0;i<ar.length;i++)
+        {
+            ar[i]=Math.pow(ar[i],2);
+            
+        }
+    
+    for(i=0;i<ar.length;i++)
+        {
+            for(j=i+1;j<ar.length;j++)
+                {
+                    if(ar[i]>ar[j])
+                        {
+                            var swap;
+                            swap=ar[i];
+                            ar[i]=ar[j];
+                            ar[j]=swap;
+                        }
+                        
+                }
+        }
+    
+    return ar;
+    
+};

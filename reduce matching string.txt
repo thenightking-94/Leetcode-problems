@@ -1,0 +1,29 @@
+var ar=["NORTH", "WEST", "SOUTH","NORTH", "EAST","SOUTH","NORTH"];
+
+  var i,j,c=0,p=0;
+  var ch=[];
+  
+ar=ar.toString().replace(/,/g,'');
+
+while(ar.includes("NORTHSOUTH")||ar.includes("SOUTHNORTH") ||ar.includes("EASTWEST") ||ar.includes("WESTEAST"))
+  {   
+    ar= ar.replace(/NORTHSOUTH/g,'').replace(/SOUTHNORTH/g,'').replace(/EASTWEST/g,'').replace(/WESTEAST/g,'');
+        
+  }
+console.log(ar);
+var ch;
+var str=[];
+for(i=0;i<ar.length;i++)
+  {
+    ch=ch+ar[i];
+    if(ch=='NORTH')
+    {str[p++]=ch;ch='';}
+    if(ch=='SOUTH')
+    {str[p++]=ch;ch='';}
+    if(ch=='EAST')
+    {str[p++]=ch;ch='';}
+    if(ch=='WEST')
+    {str[p++]=ch;ch='';}
+    
+  }
+console.log(str);
