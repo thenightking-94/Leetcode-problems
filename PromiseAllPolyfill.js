@@ -25,8 +25,8 @@ Promise.myAll = (promises) =>
     let responses = [];
     try {
       for await (const promise of promises) {
-          const res = await promise;
-          responses = [...responses, res];
+        // implicitly awaits vaue of async iterables
+          responses = [...responses, promise];
         }
       if(responses.length === promises.length)
         return resol(responses);
